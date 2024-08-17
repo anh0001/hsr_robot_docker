@@ -112,5 +112,6 @@ VOLUME [ \
     "/opt/ros/noetic/include/tmc_control_msgs" \
     ]
 
-CMD ["/usr/local/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+# CMD ["/usr/local/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+CMD ["/bin/bash"]
 

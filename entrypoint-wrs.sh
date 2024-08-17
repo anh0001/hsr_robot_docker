@@ -25,6 +25,16 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
+
+
+# The entry point script sets up the ROS and Gazebo environments, 
+# configures networking for ROS, and ensures that Gazebo services are only accessible locally. 
+# After this setup, it executes any command passed to the Docker container when it starts.
+
+# This setup is essential for ensuring that the ROS and 
+# Gazebo services are correctly configured and isolated within the container,
+# allowing it to interact with external systems (like the HSR robot) as needed.
+
 set -e
 
 source /opt/ros/$ROS_DISTRO/setup.bash
