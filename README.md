@@ -5,9 +5,9 @@ git clone --recurse-submodules https://github.com/anh0001/hsr_robot_docker.git
 docker build -f Dockerfile -t hsr_robot_image .
 docker run --net=host --rm -it hsr_robot_image
 
-To modify the setup so that a terminal is open when the container starts, without launching the Gazebo simulator, we need to make changes to both the Dockerfile and the supervisord configuration. Here's how we can do that:
 
-- In the supervisord configuration:
+
+In the supervisord configuration:
    - We've changed `autostart=true` to `autostart=false` for the simulator program. This means the Gazebo simulator won't start automatically when supervisord runs.
    - We've also changed `autorestart=true` to `autorestart=false` to prevent the simulator from restarting if it stops.
 
@@ -36,6 +36,9 @@ supervisorctl start simulator
 ```
 
 These modifications give you more control over when and how you start the Gazebo simulator, while still providing immediate access to a bash terminal when you start the container.
+
+alias hsrb_mode='export ROS_MASTER_URI=http://hsrb.local:11311 export PS1="\[\033[41;1;37m\]<hsrb>\[\033[0m\]\w$ "'
+
 
 -------------------------------------------------------------------------------
 Modified from:

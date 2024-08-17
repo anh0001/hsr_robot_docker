@@ -31,7 +31,7 @@ SHELL ["/bin/bash", "-c"]
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get install -y curl git apt-transport-https python3-pip python-is-python3 python3-catkin-tools && \
+    apt-get install -y curl git apt-transport-https python3-pip python-is-python3 python3-catkin-tools sudo net-tools iputils-ping && \
     apt-get clean
 
 # OSRF distribution is better for gazebo
