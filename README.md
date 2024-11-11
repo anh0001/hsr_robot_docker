@@ -1,11 +1,10 @@
 I am using this repo to control a real HSR robot in docker setup
 
-
+```bash
 git clone --recurse-submodules https://github.com/anh0001/hsr_robot_docker.git
 docker build -f Dockerfile -t hsr_robot_image .
 docker run --net=host --rm -it hsr_robot_image
-
-
+```
 
 In the supervisord configuration:
    - We've changed `autostart=true` to `autostart=false` for the simulator program. This means the Gazebo simulator won't start automatically when supervisord runs.
