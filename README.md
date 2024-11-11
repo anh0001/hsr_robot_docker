@@ -36,8 +36,11 @@ supervisorctl start simulator
 
 These modifications give you more control over when and how you start the Gazebo simulator, while still providing immediate access to a bash terminal when you start the container.
 
-alias hsrb_mode='export ROS_MASTER_URI=http://hsrb.local:11311 export PS1="\[\033[41;1;37m\]<hsrb>\[\033[0m\]\w$ "'
+To connect to HSR robot
 
+```bash
+alias hsrb_mode='export ROS_MASTER_URI=http://hsrb.local:11311 export PS1="\[\033[41;1;37m\]<hsrb>\[\033[0m\]\w$ "'
+```
 
 -------------------------------------------------------------------------------
 Modified from:
